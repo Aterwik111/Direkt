@@ -11,7 +11,8 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPTSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-	System = new CSystem;
+	CSystem sys;
+	System = &sys;
 	Graphic = &System->Gr;
 	DirectStuff = &Graphic->DS;
 	World = &System->World;
@@ -25,6 +26,5 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	System->programThread.join();
 	DirectStuff->Cleanup();
 	System->ShutdownMainWindow();
-	delete System;
 	return 0;
 }
