@@ -17,7 +17,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
 	DirectStuff = &Graphic->DS;
 	World = &System->World;
 	FrameData = &System->fd;
-
+	///
 
 	System->CreateMainWindow(L"MainWindow", L"Window",1024,768, false);
 	DirectStuff->Initialize();
