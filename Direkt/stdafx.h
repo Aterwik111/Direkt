@@ -48,6 +48,7 @@
 #include "Synchronization.h"
 #include "Renderable.h"
 #include "WorldRenderer.h"
+#include "FPSCounter.h"
 
 #define SafeRelease(ptr)	if(ptr!=NULL){ptr->Release(); ptr=NULL;}
 #define SafeCloseHandle(handle)	if(handle!=NULL && handle!=INVALID_HANDLE_VALUE){CloseHandle(handle);}

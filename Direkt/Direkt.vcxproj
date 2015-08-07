@@ -82,6 +82,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FPSCounter.h" />
     <ClInclude Include="Renderable.h" />
     <ClInclude Include="Structs.h" />
     <ClInclude Include="DirectStuff.h" />
@@ -97,6 +98,7 @@
     <ClInclude Include="WorldRenderer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FPSCounter.cpp" />
     <ClCompile Include="Renderable.cpp" />
     <ClCompile Include="Structs.cpp" />
     <ClCompile Include="DirectStuff.cpp" />

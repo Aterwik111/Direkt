@@ -73,6 +73,7 @@ union value{
 };
 struct Fd{
 	float fPixelsPerMeter = 16;
+	AABB camAABB;
 	positionD camPos;
 };
 

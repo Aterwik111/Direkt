@@ -84,6 +84,8 @@ void __cdecl CSystem::ProgramThreadProcedure(){
 	FrameData->camPos.x = 0;
 	FrameData->camPos.y = 128;
 	WorldRenderer wr;
+	FPSCounter fps;
+	bool bActive = false;
 	wr.SetActive();
 	while (true){
 		while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
@@ -103,8 +105,18 @@ void __cdecl CSystem::ProgramThreadProcedure(){
 						if (System->vs.bFullScreen){
 						System->GoWindowed(1024, 768);
 						}
-					else{
+						else{
 						System->GoFullScreen();
+						}
+					}
+					else if(msg.wParam == VK_F3){
+						if (bActive){
+							fps.SetInactive();
+							bActive = false;
+						}
+						else{
+							fps.SetActive();
+							bActive = true;
 						}
 					}
 					break;
@@ -124,6 +136,7 @@ void CSystem::Frame(){
 			World.GenerateChunk(i);
 		}
 	}
+	FrameData->camAABB = Graphic->GetCameraAABB();
 	Graphic->RenderFrame();
 }
 LRESULT CALLBACK CSystem::MessageHandler(HWND hwnd, UINT umessage, WPARAM wparam, LPARAM lparam){

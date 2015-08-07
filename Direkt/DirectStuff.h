@@ -3,6 +3,7 @@ class CDirectStuff
 {
 public:
 	ID2D1Factory* m_factory;
+	IDWriteFactory* m_writeFactory;
 	ID2D1HwndRenderTarget* m_renderTarget;
 	ID2D1SolidColorBrush *firstBrush;
 	ID2D1SolidColorBrush *secondBrush;
